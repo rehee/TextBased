@@ -16,6 +16,5 @@ namespace TextBased.Item.Base
     public int ItemLevel { get; private set; }
     public string ItemName { get; private set; }
     public EnumItemType ItemType { get; private set; }
-
   }
 }

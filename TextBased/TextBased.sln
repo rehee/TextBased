@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29503.13
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextBased.Item", "TextBased.Item\TextBased.Item.csproj", "{94A8221B-95D3-4C0A-AA01-1C8DCFED3AAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextBased.Item", "TextBased.Item\TextBased.Item.csproj", "{94A8221B-95D3-4C0A-AA01-1C8DCFED3AAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextBased.Common", "TextBased.Common\TextBased.Common.csproj", "{72C42C76-02A3-4B11-88AA-BAAC3C872260}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextBased.Common", "TextBased.Common\TextBased.Common.csproj", "{72C42C76-02A3-4B11-88AA-BAAC3C872260}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextBased.Item.Test", "Test\TextBased.Item.Test\TextBased.Item.Test.csproj", "{62500E63-C5E3-4D11-A761-9C23FB02B170}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextBased.Sprites", "TextBased.Sprites\TextBased.Sprites.csproj", "{5251CCC3-89D5-4BC6-8A49-0064067254BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{62500E63-C5E3-4D11-A761-9C23FB02B170}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62500E63-C5E3-4D11-A761-9C23FB02B170}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62500E63-C5E3-4D11-A761-9C23FB02B170}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5251CCC3-89D5-4BC6-8A49-0064067254BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5251CCC3-89D5-4BC6-8A49-0064067254BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5251CCC3-89D5-4BC6-8A49-0064067254BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5251CCC3-89D5-4BC6-8A49-0064067254BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,7 +1,6 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TextBased.Common.Sprites;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TextBased.Item.ConsumableItem.Portions;
+using TextBased.Sprites;
 
 namespace TextBased.Item.Test.Items.Consumes
 {

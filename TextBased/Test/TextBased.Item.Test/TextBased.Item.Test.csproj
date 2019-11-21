@@ -70,6 +70,10 @@
       <Project>{94a8221b-95d3-4c0a-aa01-1c8dcfed3aad}</Project>
       <Name>TextBased.Item</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\TextBased.Sprites\TextBased.Sprites.csproj">
+      <Project>{5251CCC3-89D5-4BC6-8A49-0064067254BF}</Project>
+      <Name>TextBased.Sprites</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
