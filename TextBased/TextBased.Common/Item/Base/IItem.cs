@@ -11,6 +11,7 @@ namespace TextBased.Common.Item.Base
     int ItemLevel { get; set; }
     EnumItemType ItemType { get; set; }
     decimal DropPercentage { get; set; }
+    bool NotTemplate { get; set; }
     IItemBase GeneralBaseIten();
   }
 

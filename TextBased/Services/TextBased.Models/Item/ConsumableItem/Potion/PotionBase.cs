@@ -16,13 +16,12 @@ namespace TextBased.Item.ConsumableItem.Portions
       this.InitCoolDown = InitCoolDown;
     }
 
-    public static int CoolDown { get; private set; }
     public static void ResetPotionCollDown(int time)
     {
-      CoolDown = time;
+      
     }
-    public decimal Amount { get; private set; }
-    public int InitCoolDown { get; private set; }
+    public virtual decimal Amount { get; set; }
+    public virtual int InitCoolDown { get; set; }
 
   }
 }

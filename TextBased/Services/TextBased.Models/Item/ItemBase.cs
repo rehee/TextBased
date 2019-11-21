@@ -23,11 +23,11 @@ namespace TextBased.Models.Item
 
     public long ItemOwnerId { get; set; }
     public long ItemZoneId { get; set; }
-    
+
     public decimal DropPercentage { get; set; }
 
     public bool IncoudeInventoryCount { get; set; }
-
+    public bool NotTemplate { get; set; } = true;
     public virtual IItemBase GeneralBaseIten()
     {
       return null;
