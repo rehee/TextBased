@@ -10,9 +10,21 @@ namespace System
   {
     public static decimal GetRandomKey(int from = 0, int to = 1000)
     {
-      Random ran = new Random();
-      decimal n = ran.Next(from, to) / to;
+      Random ran = new Random(DateTime.Now.Millisecond);
+      decimal n = ran.Next(from, to) / (decimal)to;
       return n;
+    }
+
+    public static T GetRandomItem<T>(List<T> input)
+    {
+      Random ran = new Random(DateTime.Now.Millisecond + 2);
+      var length = input.Count;
+      int n = ran.Next(0, length);
+      if (n == length)
+      {
+        n = n - 1;
+      }
+      return input[n];
     }
 
     public static decimal? GetNearKey(this IEnumerable<decimal> keyCollection, decimal key)
