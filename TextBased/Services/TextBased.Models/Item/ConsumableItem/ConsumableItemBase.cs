@@ -12,8 +12,12 @@ namespace TextBased.Models.Item.ConsumableItem
 {
   public abstract class ConsumableItemBase : ItemBase, IConsumableItem
   {
-
+    [HideEdit]
     public int Quanty { get; set; }
+
+    [HideEdit]
+    public override int ItemLevel { get => base.ItemLevel; set => base.ItemLevel = value; }
+
     public virtual void Consume(int consumeNumber = 1, ITarget self = null, ITarget target = null)
     {
 

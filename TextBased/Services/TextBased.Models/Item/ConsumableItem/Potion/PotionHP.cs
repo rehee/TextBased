@@ -10,6 +10,10 @@ namespace TextBased.Item.ConsumableItem.Portions
 {
   public class PotionHP : PotionBase
   {
+    public PotionHP() : base()
+    {
+      Quanty = 1;
+    }
     public override void Consume(int consumeNumber = 1, ITarget self = null, ITarget target = null)
     {
       base.Consume(consumeNumber, target);

@@ -10,11 +10,18 @@ namespace TextBased.Item.ConsumableItem.Portions
 {
   public abstract class PotionBase : ConsumableItemBase
   {
+    public PotionBase() : base()
+    {
+      ItemLevel = 1;
+    }
     public static void ResetPotionCollDown(int time)
     {
-      
+
     }
+    [InputType(EditorType = EnumInputType.Text, SortOrder = -301)]
     public virtual decimal Amount { get; set; }
+
+    [InputType(EditorType = EnumInputType.Number, SortOrder = -302)]
     public virtual int InitCoolDown { get; set; }
 
     public override IItemBase GeneralBaseIten<T>()

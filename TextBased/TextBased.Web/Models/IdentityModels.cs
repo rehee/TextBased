@@ -1,33 +1,43 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using SDHC.Common.Entity.Models;
+using TextBased.Item.ConsumableItem.Portions;
+using TextBased.Models.Item.Equipments.Weapons;
 
 namespace TextBased.Web.Models
 {
-    // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
-    public class ApplicationUser : IdentityUser
+  public class ApplicationUser : SDHCUser
+  {
+    
+  }
+
+  public class ApplicationDbContext : IdentityDbContext<SDHCUser>, IContent
+  {
+    public ApplicationDbContext()
+        : base("DefaultConnection", throwIfV1Schema: false)
     {
-        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
-        {
-            // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
-            var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
-            // Add custom user claims here
-            return userIdentity;
-        }
     }
 
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
-    {
-        public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
-        {
-        }
+    public IDbSet<BaseContent> Contents { get; set; }
+    public IDbSet<BaseSelect> Selects { get; set; }
+    public DbSet<ApplicationUser> MyUsers { get; set; }
+    public DbSet<SCHCContent> SCHCContents { get; set; }
 
-        public static ApplicationDbContext Create()
-        {
-            return new ApplicationDbContext();
-        }
+    public DbSet<PotionHP> PotionHPs { get; set; }
+    public DbSet<PotionHPItem> PotionsHPItem { get; set; }
+    public DbSet<WeaponAxeBluePrint> WeaponAxeBluePrints { get; set; }
+    public DbSet<WeaponClubBluePrint> WeaponClubBluePrints { get; set; }
+    public DbSet<WeaponSwordBluePrint> WeaponSwordBluePrints { get; set; }
+    
+
+
+    public static ApplicationDbContext Create()
+    {
+      return new ApplicationDbContext();
     }
+  }
 }

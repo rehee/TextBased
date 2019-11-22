@@ -1,6 +1,7 @@
 ﻿using SDHC.Common.Entity.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -12,20 +13,29 @@ namespace TextBased.Models.Item
 {
   public abstract class ItemBase : BaseModel, IItemBase
   {
+    [InputType(SortOrder = -1)]
     public string ItemName { get; set; }
-    public int ItemLevel { get; set; }
-    public EnumItemType ItemType { get; set; }
+    [InputType(SortOrder = -2)]
+    public virtual int ItemLevel { get; set; }
 
+    [HideEdit]
+    public EnumItemType ItemType { get; set; }
+    [HideEdit]
     public long ItemOwnerId { get; set; }
+    [HideEdit]
     public long ItemZoneId { get; set; }
 
+    [InputType(SortOrder = -3, EditorType = EnumInputType.Text)]
     public decimal DropPercentage { get; set; }
-
+    [HideEdit]
     public bool IncoudeInventoryCount { get; set; }
-    public bool IsBluePrint { get; set; } = false;
+    [HideEdit]
+    public bool IsBluePrint { get; set; } = true;
+    [HideEdit]
     public long BluePrintId { get; set; }
 
     [NotMapped]
+    [HideEdit]
     public long BaseId
     {
       get
