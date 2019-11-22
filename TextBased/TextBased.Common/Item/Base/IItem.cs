@@ -16,6 +16,7 @@ namespace TextBased.Common.Item.Base
     long BluePrintId { get; set; }
     IItemBase GeneralBaseIten<T>() where T : IItemBase, new();
     IItemBase GeneralBaseIten();
+    long BaseId { get; }
   }
 
 }

@@ -10,28 +10,25 @@ namespace TextBased
 {
   public static class DropFunction
   {
-    public static List<IItemBase> DropItem(decimal noDropRate = 0m)
+    public static List<IItemBase> GetDropItemBase(decimal noDropAbove = 0m)
     {
       var result = new List<IItemBase>();
       for (var i = 0; i < Basics.MaxItemDropPerTime; i++)
       {
-        var isNoDrop = U.GetRandomKey();
-        if (noDropRate > isNoDrop)
+        var checkDropRate = U.GetRandomKey();
+        if (noDropAbove > checkDropRate)
         {
           break;
         }
-        var itemPoll = U.GetRandomItem(Pool.DropPool);
-        var items = itemPoll.GetNearValue(U.GetRandomKey());
+        var itemPoll = U.GetRandomItem(Pool.PoolList);
+        if (itemPoll == null)
+          continue;
+        var items = itemPoll.GetRandomItem(U.GetRandomKey());
         if (items == null)
         {
           continue;
         }
-        var itemDrop = U.GetRandomItem(items);
-        if (itemDrop == null)
-        {
-          continue;
-        }
-        result.Add(itemDrop);
+        result.Add(items);
       }
       return result;
     }

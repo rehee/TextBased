@@ -1,6 +1,7 @@
 ﻿using SDHC.Common.Entity.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,15 @@ namespace TextBased.Models.Item
     public bool IncoudeInventoryCount { get; set; }
     public bool IsBluePrint { get; set; } = false;
     public long BluePrintId { get; set; }
+
+    [NotMapped]
+    public long BaseId
+    {
+      get
+      {
+        return this.Id;
+      }
+    }
 
     public virtual IItemBase GeneralBaseIten<T>() where T : IItemBase, new()
     {

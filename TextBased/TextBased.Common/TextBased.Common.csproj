@@ -5,7 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Sprites\Buffs\" />
+    <Compile Remove="Sprites\Buffs\**" />
+    <EmbeddedResource Remove="Sprites\Buffs\**" />
+    <None Remove="Sprites\Buffs\**" />
   </ItemGroup>
 
 </Project>

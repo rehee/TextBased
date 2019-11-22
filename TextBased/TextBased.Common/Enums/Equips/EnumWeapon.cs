@@ -6,7 +6,7 @@ namespace TextBased.Common.Enums.Equips
 {
   public enum EnumWeapon
   {
-    Sward,
+    Sword,
     Axe,
     Club
   }

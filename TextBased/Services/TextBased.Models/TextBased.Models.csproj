@@ -60,11 +60,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DropPool\DropFunction.cs" />
+    <Compile Include="Drop\DropFunction.cs" />
+    <Compile Include="DropPool\Equipments\Potions\PotionPool.cs" />
+    <Compile Include="DropPool\Equipments\Weapons\ClubPool.cs" />
+    <Compile Include="DropPool\Equipments\Weapons\AxePool.cs" />
+    <Compile Include="DropPool\Equipments\Weapons\SwordPool.cs" />
     <Compile Include="DropPool\Pool.cs" />
     <Compile Include="Item\ConsumableItem\ConsumableItemBase.cs" />
     <Compile Include="Item\ConsumableItem\Potion\PotionBase.cs" />
     <Compile Include="Item\ConsumableItem\Potion\PotionHP.cs" />
+    <Compile Include="Item\Equipments\EquipmentBase.cs" />
+    <Compile Include="Item\Equipments\Weapons\WeaponBase.cs" />
+    <Compile Include="Item\Equipments\Weapons\WeaponClubBluePrint.cs" />
+    <Compile Include="Item\Equipments\Weapons\WeaponAxeBluePrint.cs" />
+    <Compile Include="Item\Equipments\Weapons\WeaponSwordBluePrint.cs" />
     <Compile Include="Item\ItemBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -11,7 +11,7 @@ namespace TextBased.Common.Sprites
     long Armor { get; set; }
     long DamageReduce { get; set; }
 
-    decimal CriticalRage { get; set; }
+    decimal CriticalRate { get; set; }
     decimal CriticalMultiple { get; set; }
 
   }
