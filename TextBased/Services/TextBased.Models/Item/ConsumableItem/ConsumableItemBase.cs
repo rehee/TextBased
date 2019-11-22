@@ -12,18 +12,19 @@ namespace TextBased.Models.Item.ConsumableItem
 {
   public abstract class ConsumableItemBase : ItemBase, IConsumableItem
   {
-    public ConsumableItemBase(string ItemName, int ItemLevel, int Quanty) :
-      base(ItemName, ItemLevel, EnumItemType.Consumable)
-    {
-      this.Quanty = Quanty;
-    }
-    public int Quanty { get; private set; }
 
+    public int Quanty { get; set; }
     public virtual void Consume(int consumeNumber = 1, ITarget self = null, ITarget target = null)
     {
 
     }
 
+    public override IItemBase GeneralBaseIten<T>()
+    {
+      var result = base.GeneralBaseIten<T>() as ConsumableItemBase;
+      result.Quanty = Quanty;
+      return result;
+    }
 
   }
 }

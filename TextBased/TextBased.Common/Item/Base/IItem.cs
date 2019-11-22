@@ -11,7 +11,10 @@ namespace TextBased.Common.Item.Base
     int ItemLevel { get; set; }
     EnumItemType ItemType { get; set; }
     decimal DropPercentage { get; set; }
-    bool NotTemplate { get; set; }
+    bool IsBluePrint { get; set; }
+    bool IncoudeInventoryCount { get; set; }
+    long BluePrintId { get; set; }
+    IItemBase GeneralBaseIten<T>() where T : IItemBase, new();
     IItemBase GeneralBaseIten();
   }
 

@@ -21,8 +21,17 @@ namespace TextBased
           break;
         }
         var itemPoll = U.GetRandomItem(Pool.DropPool);
-        var item = itemPoll.GetNearValue(U.GetRandomKey());
-        result.Add(item);
+        var items = itemPoll.GetNearValue(U.GetRandomKey());
+        if (items == null)
+        {
+          continue;
+        }
+        var itemDrop = U.GetRandomItem(items);
+        if (itemDrop == null)
+        {
+          continue;
+        }
+        result.Add(itemDrop);
       }
       return result;
     }

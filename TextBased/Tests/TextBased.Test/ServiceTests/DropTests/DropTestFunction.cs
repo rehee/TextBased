@@ -14,17 +14,15 @@ namespace TextBased.Test.ServiceTests.DropTests
     {
       Pool.Init();
       var Items = DropFunction.DropItem();
-      Assert.AreEqual(6, Items.Count);
+      Assert.AreNotEqual(7, Items.Count);
     }
     [TestMethod]
     public void DropPotion()
     {
       Pool.Init();
-      var Items = Pool.PotionPool.Values.FirstOrDefault() as PotionHP;
-      var newItem = Items.GeneralBaseIten() as PotionHPItem;
-      Assert.AreEqual(Items.Amount, newItem.Amount);
-      Items.Amount = 1m;
-      Assert.AreEqual(Items.Amount, newItem.Amount);
+      var item = Pool.PotionPool.FirstOrDefault();
+      var item2 = item.GeneralBaseIten();
+      Assert.AreEqual(item.ItemName, item2.ItemName);
     }
 
   }

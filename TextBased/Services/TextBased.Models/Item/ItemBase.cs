@@ -11,12 +11,6 @@ namespace TextBased.Models.Item
 {
   public abstract class ItemBase : BaseModel, IItemBase
   {
-    public ItemBase(string itemName, int itemLevel, EnumItemType itemType) : base()
-    {
-      this.ItemName = itemName;
-      this.ItemLevel = itemLevel;
-      this.ItemType = itemType;
-    }
     public string ItemName { get; set; }
     public int ItemLevel { get; set; }
     public EnumItemType ItemType { get; set; }
@@ -27,7 +21,22 @@ namespace TextBased.Models.Item
     public decimal DropPercentage { get; set; }
 
     public bool IncoudeInventoryCount { get; set; }
-    public bool NotTemplate { get; set; } = true;
+    public bool IsBluePrint { get; set; } = false;
+    public long BluePrintId { get; set; }
+
+    public virtual IItemBase GeneralBaseIten<T>() where T : IItemBase, new()
+    {
+      var result = new T()
+      {
+        BluePrintId = this.Id,
+        IsBluePrint = true,
+        ItemName = ItemName,
+        ItemLevel = ItemLevel,
+        ItemType = ItemType,
+        IncoudeInventoryCount = IncoudeInventoryCount
+      };
+      return result;
+    }
     public virtual IItemBase GeneralBaseIten()
     {
       return null;
